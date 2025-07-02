@@ -1,0 +1,129 @@
+<%- include('../partials/head') %>
+  </head>
+
+  <body class="bg-gray-100 min-h-screen">
+    <%- include('../partials/nav') %>
+      <main class="flex items-center justify-center min-h-[80vh]">
+        <div class="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
+          <h1 class="text-2xl font-bold mb-6 text-center text-red-600">
+            Create your Account
+          </h1>
+          <form action="/signup" method="POST" class="space-y-4">
+            <%- include('../partials/errors') %>
+            <!-- First Name & Last Name in one row -->
+            <div class="flex ">
+              <!-- Error Messages -->
+
+
+              <div class="w-1/2">
+                <label class="block text-gray-700 mb-1 font-bold" for="firstName">
+                  First Name
+                </label>
+                <input 
+                  type="text" 
+                  id="firstName" 
+                  name="firstName" 
+                  placeholder="👤 e.g. John"
+                  value="<%= oldInput.firstName %>" 
+                  class="w-full pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
+                  required />
+              </div>
+              <div class="w-1/2">
+                <label class="block text-gray-700 mb-1 font-bold" for="lastName">
+                  Last Name
+                </label>
+                <input 
+                  type="text" 
+                  id="lastName" 
+                  name="lastName" 
+                  placeholder="👤 e.g. Doe"
+                  value="<%= oldInput.lastName %>"
+                  class="w-full pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400" />
+              </div>
+            </div>
+            <!-- Email -->
+            <div>
+              <label class="block text-gray-700 mb-1 font-bold" for="email">
+                Email
+              </label>
+              <input 
+                type="email" \
+                id="email" 
+                name="email" 
+                placeholder="✉️ e.g. john@email.com"
+                value="<%= oldInput.email %>"
+                class="w-full pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
+                required />
+            </div>
+            <!-- Password -->
+            <div>
+              <label class="block text-gray-700 mb-1 font-bold" for="password">
+                Password
+              </label>
+              <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                placeholder="🔒 Enter your password"
+                value="<%= oldInput.password %>"
+                class="w-full pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
+                required />
+            </div>
+            <!-- Confirm Password -->
+            <div>
+              <label class="block text-gray-700 mb-1 font-bold" for="confirmPassword">
+                Confirm Password
+              </label>
+              <input 
+                type="password" 
+                id="confirmPassword" 
+                name="confirmPassword" 
+                placeholder="🔒 Re-enter your password"
+
+                class="w-full pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
+                required />
+            </div>
+            <!-- User Type -->
+            <div>
+              <p class="text-gray-700 mb-2 font-bold">User Type:</p>
+              <div class="flex gap-6">
+                <label class="flex items-center">
+                  <input 
+                    type="radio" 
+                    name="userType" 
+                    value="guest" 
+                    class="accent-red-500 mr-2" 
+                    checked=<%= oldInput.userType === 'guest'  %>
+                    required />
+                  <span class="text-gray-700">Guest</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="userType" value="host" class="accent-red-500 mr-2" checked=<%= oldInput.userType === 'host'  %> required />
+                  <span class="text-gray-700">Host</span>
+                </label>
+              </div>
+            </div>
+            <!-- Terms -->
+            <div>
+              <label class="flex items-center">
+                <input class="accent-red-500 mr-2" type="checkbox" name="termsAccepted" required />
+                <span class="text-gray-700">I agree to the <a href="#"
+                    class="text-red-500 underline hover:text-red-700">terms and conditions</a></span>
+              </label>
+            </div>
+            <!-- Submit Button -->
+            <button type="submit"
+              class="w-full bg-red-500 text-white py-2 rounded-md font-semibold hover:bg-red-600 transition duration-200 flex items-center justify-center gap-2">
+              Register
+              <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M13 18l6-6-6-6"></path>
+              </svg>
+            </button>
+            <p class="text-center text-gray-500 mt-2 text-sm">
+              Already have an account?
+              <a href="/login" class="text-red-500 underline hover:text-red-700">Login</a>
+            </p>
+          </form>
+        </div>
+      </main>
+  </body>
