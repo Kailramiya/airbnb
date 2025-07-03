@@ -2,6 +2,14 @@
 
 This project is a simple Airbnb-like web application built with Node.js, Express, MongoDB, and Mongoose. It demonstrates user authentication, session management, file uploads, and CRUD operations for homes and user favourites. The UI is styled using Tailwind CSS and EJS templates.
 
+## 🔴 Demo Videos
+
+🎥 **Guest/User Panel**  
+Watch here 👉  https://drive.google.com/file/d/10n2oK6_N7ZkTriKPOlbPHUI_qgYEC7rC/view?usp=sharing
+
+🎥 **Host/Admin Panel**  
+Watch here 👉 https://drive.google.com/file/d/1D_TEzS6S-W8O_Nqy8de6Gn-qDb3wXoSP/view?usp=sharing
+
 ## Features
 
 - **User Authentication**: Signup and login with hashed passwords using bcrypt.
