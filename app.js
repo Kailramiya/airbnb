@@ -14,7 +14,7 @@ const { default: mongoose } = require('mongoose');
 const MongoDBStore = require('connect-mongodb-session')(session);
 
 const app = express();
-const DB_PATH = "mongodb+srv://amankundu:MongoDb12345@cluster0.ismomzo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const DB_PATH = <your_database_path>;
 const bodyParser = require('body-parser');
 const multer = require('multer');
 
